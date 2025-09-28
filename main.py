@@ -4,7 +4,6 @@ import numpy as np
 import os
 import re
 import argparse
-from dotenv import load_dotenv
 from googletrans import Translator
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -17,8 +16,7 @@ from datasets import Dataset
 import torch
 
 # -------------------- Load environment --------------------
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GOOGLE_API_KEY = os.environ("GOOGLE_API_KEY")
 if not GOOGLE_API_KEY:
     print("Warning: GOOGLE_API_KEY not found in .env. Gemini fallback will not work.")
 
