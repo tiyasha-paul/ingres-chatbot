@@ -10,7 +10,7 @@ langchain-google-genai==1.0.5
 langchain-huggingface==0.0.3
 sentence-transformers==2.7.0
 faiss-cpu==1.9.0.post1
-googletrans-py==1.0.10
+googletrans==4.0.0
 gradio==4.37.2
 matplotlib==3.9.2
 pandas==2.2.2
