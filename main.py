@@ -4,7 +4,7 @@ import numpy as np
 import os
 import re
 import argparse
-from googletrans import Translator
+from googletrans_py import Translator
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.schema import Document
