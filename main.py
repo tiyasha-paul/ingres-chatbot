@@ -5,7 +5,7 @@ import os
 import re
 import argparse
 from dotenv import load_dotenv
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.schema import Document
@@ -62,20 +62,22 @@ for state, records in data_json.items():
         metadata_json[key] = r
 # print(f"Metadata keys: {list(metadata_json.keys())}")  # Debug print 
 
-translator = Translator()
+translator = GoogleTranslator(source='auto', target='en')
 
 # -------------------- Helper Functions --------------------
 
 def translate_to_en(text):
     try:
-        return translator.translate(text, dest='en').text
+        return translator.translate(text)
     except:
         return text
 
 def translate_to_target(text, lang):
-    if lang == 'en': return text
+    if lang == 'en':
+        return text
     try:
-        return translator.translate(text, dest=lang).text
+        target_translator = GoogleTranslator(source='en', target=lang)
+        return target_translator.translate(text)
     except:
         return text
 
