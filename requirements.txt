@@ -1,15 +1,15 @@
 datasets==2.18.0
 peft==0.11.1
 accelerate==0.30.1
-bitsandbytes==0.42.0  # Downgraded for 3.13 compatibility
+bitsandbytes==0.43.1
 transformers==4.42.4
-torch==2.4.1  # Downgraded; 2.6.0 lacks full 3.13 support
+torch==2.6.0
 langchain==0.2.5
 langchain-community==0.2.5
 langchain-google-genai==1.0.5
 langchain-huggingface==0.0.3
 sentence-transformers==2.7.0
-faiss-cpu==1.8.0  # Downgraded for stability on 3.13
+faiss-cpu==1.9.0.post1
 deep-translator==1.11.4
 gradio==4.37.2
 matplotlib==3.9.2
@@ -18,6 +18,6 @@ numpy==1.26.4
 google-generativeai==0.5.4
 streamlit==1.36.0
 python-dotenv==1.0.1
-fastapi==0.116.1
-uvicorn[standard]==0.35.0
-pydantic==2.11.9
+fastapi==0.116.1  # Latest stable version as of 2025
+uvicorn[standard]==0.35.0  # Compatible with fastapi
+pydantic==2.11.9  # Compatible with langchain and fastapi
